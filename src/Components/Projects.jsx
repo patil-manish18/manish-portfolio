@@ -170,6 +170,9 @@
 // // template_918e09a
 
 import './Projects.css'
+import cropYieldImage from '../assets/p1.jpg'
+import fakeProductImage from '../assets/p2.jpg'
+import vidhayakBhartiImage from '../assets/p3.png'
 
 const projects = [
   {
@@ -179,7 +182,7 @@ const projects = [
     tags: ['ML', 'DL', 'Google Earth Engine', 'Streamlit'],
     github: 'https://github.com/patil-manish18/Crop-Yield-Prediction',
     live: 'https://predicting-cropyield.streamlit.app/',
-    image: '/src/assets/p1.jpg'
+    image: cropYieldImage
   },
 
   {
@@ -190,7 +193,7 @@ const projects = [
     github:
       'https://github.com/patil-manish18/Fake-Product-Detection-Using-Blockchain-Technology',
     live: null,
-    image: '/src/assets/p2.jpg'
+    image: fakeProductImage
   },
 
   {
@@ -201,7 +204,7 @@ const projects = [
     tags: ['Python', 'Flask', 'SQL'],
     github: 'https://github.com/patil-manish18/VidhayakBharti',
     live: 'https://vidhayakbharti.org/',
-    image: '/src/assets/p3.png'
+    image: vidhayakBhartiImage
   }
 ]
 

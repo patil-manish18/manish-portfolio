@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Intro.css'
 import resume from '../assets/Resume_Manish_Patil.pdf'
+import profileImage from '../assets/Portfolio img.png'
 
 const roles = [
   'Software Developer',
@@ -53,7 +54,7 @@ function Intro() {
         </a>
       </div>
       <div className="hero-right">
-        <img src="/src/assets/Portfolio img.png" alt="Manish" className="profile-img" />
+        <img src={profileImage} alt="Manish" className="profile-img" />
       </div>
     </section>
   )
