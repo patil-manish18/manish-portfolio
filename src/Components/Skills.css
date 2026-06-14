@@ -1,0 +1,359 @@
+#skills {
+  min-height: 50vh;
+  padding: 6rem 8% 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HEADER */
+.skills-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.skills-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.skills-header h2 span {
+  color: #00bfff;
+  text-shadow: 0 0 12px rgba(0, 191, 255, 0.35);
+}
+
+.skills-header p {
+  font-size: 0.95rem;
+}
+
+.dark .skills-header p {
+  color: #888888;
+}
+
+.light .skills-header p {
+  color: #777777;
+}
+
+/* GRID */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* BADGE */
+.skill-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  opacity: 0;
+}
+
+/* animate ONLY when section active */
+.animate-skills .skill-badge {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+/* RANDOM ENTRY DIRECTIONS */
+
+.animate-skills .skill-badge:nth-child(1) {
+  animation-name: fromLeft;
+  animation-delay: 0.1s;
+}
+
+.animate-skills .skill-badge:nth-child(2) {
+  animation-name: fromTop;
+  animation-delay: 0.25s;
+}
+
+.animate-skills .skill-badge:nth-child(3) {
+  animation-name: fromRight;
+  animation-delay: 0.4s;
+}
+
+.animate-skills .skill-badge:nth-child(4) {
+  animation-name: fromBottom;
+  animation-delay: 0.55s;
+}
+
+.animate-skills .skill-badge:nth-child(5) {
+  animation-name: fromLeft;
+  animation-delay: 0.7s;
+}
+
+.animate-skills .skill-badge:nth-child(6) {
+  animation-name: fromRight;
+  animation-delay: 0.85s;
+}
+
+.animate-skills .skill-badge:nth-child(7) {
+  animation-name: fromTop;
+  animation-delay: 1s;
+}
+
+.animate-skills .skill-badge:nth-child(8) {
+  animation-name: fromBottom;
+  animation-delay: 1.15s;
+}
+
+.animate-skills .skill-badge:nth-child(9) {
+  animation-name: fromLeft;
+  animation-delay: 1.3s;
+}
+
+.animate-skills .skill-badge:nth-child(10) {
+  animation-name: fromRight;
+  animation-delay: 1.45s;
+}
+
+.animate-skills .skill-badge:nth-child(11) {
+  animation-name: fromTop;
+  animation-delay: 1.6s;
+}
+
+.animate-skills .skill-badge:nth-child(12) {
+  animation-name: fromBottom;
+  animation-delay: 1.75s;
+}
+
+.animate-skills .skill-badge:nth-child(13) {
+  animation-name: fromLeft;
+  animation-delay: 1.9s;
+}
+
+.animate-skills .skill-badge:nth-child(14) {
+  animation-name: fromRight;
+  animation-delay: 2.05s;
+}
+
+/* CIRCLE */
+.skill-circle {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* DARK MODE */
+.dark .skill-circle {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+/* LIGHT MODE */
+.light .skill-circle {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* rotating glow ring */
+.skill-circle::before {
+  content: '';
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  background: conic-gradient(
+    transparent,
+    rgba(0,191,255,0.8),
+    transparent 30%
+  );
+  animation: rotate 4s linear infinite;
+}
+
+/* inner layer */
+.skill-circle::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* DARK INNER */
+.dark .skill-circle::after {
+  background: #0f0f0f;
+}
+
+/* LIGHT INNER */
+.light .skill-circle::after {
+  background: #f8f9fb;
+}
+
+/* HOVER */
+.skill-circle:hover {
+  transform: translateY(-10px) scale(1.08);
+  box-shadow:
+    0 0 25px rgba(0,191,255,0.30),
+    0 0 50px rgba(0,191,255,0.10);
+}
+
+.skill-circle img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.skill-circle:hover img {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* invert icons in dark mode */
+.dark img[alt="Express.js"],
+.dark img[alt="GitHub"] {
+  filter: invert(1);
+}
+
+/* SKILL TEXT */
+.skill-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.dark .skill-name {
+  color: #aaaaaa;
+}
+
+.light .skill-name {
+  color: #555555;
+}
+
+.skill-badge:hover .skill-name {
+  color: #00bfff;
+}
+
+/* ROTATING BORDER */
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ENTRY ANIMATIONS */
+
+@keyframes fromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fromRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  #skills {
+    min-height: auto;
+    padding: 4rem 6% 3rem;
+    gap: 3rem;
+  }
+
+  .skill-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .skill-circle img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .skills-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .skills-grid {
+    gap: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #skills {
+    padding: 3.5rem 5% 3rem;
+    gap: 2.2rem;
+  }
+
+  .skills-header h2 {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem 0.8rem;
+    width: 100%;
+  }
+
+  .skill-circle {
+    width: 78px;
+    height: 78px;
+  }
+
+  .skill-circle img {
+    width: 36px;
+    height: 36px;
+  }
+}
